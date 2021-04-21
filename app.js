@@ -26,8 +26,8 @@ app.use((req, res, next) => {
     error: {
       message: "Route has not been setup yet..",
       validRoutes: [
-        "localhost:3000/calc/either",
-        "localhost:3000/calc/combined",
+        "localhost:8080/calc/either",
+        "localhost:8080/calc/combined",
       ],
     },
   });
