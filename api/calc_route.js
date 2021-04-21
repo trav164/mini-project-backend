@@ -8,15 +8,28 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/either", (req, res, next) => {
-  console.log(req.body.number1);
-  res.json(req.body);
+  const number1 = validateNumber(req.body.number1);
+  const number2 = validateNumber(req.body.number2);
+
+  const result = number1 + number2 - number1 * number2;
+
+  if (result) res.json({ Result: result });
 });
 
 router.get("/combined", (req, res, next) => {
-  console.log(req.body);
-  res.json(req.body);
+  const number1 = validateNumber(req.body.number1);
+  const number2 = validateNumber(req.body.number2);
+
+  const result = number1 * number2;
+
+  if (result) res.json({ Result: result });
 });
 
-// add function to validate that numbers are correct....
+validateNumber = (number) => {
+  const x = parseFloat(number);
+  if (x > 0 && x <= 1) {
+    return x;
+  }
+};
 
 module.exports = router;

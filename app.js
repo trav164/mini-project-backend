@@ -16,6 +16,7 @@ app.use("/calc", bodyParser.json());
 app.use("/calc", calc);
 
 app.use((req, res, next) => {
+  // Fall back route if nothing is hit...
   const error = new Error("Route has not been setup yet dummy");
   error.status = 404;
   next(error);
@@ -24,6 +25,10 @@ app.use((req, res, next) => {
   res.json({
     error: {
       message: "Route has not been setup yet..",
+      validRoutes: [
+        "localhost:3000/calc/either",
+        "localhost:3000/calc/combined",
+      ],
     },
   });
 });
