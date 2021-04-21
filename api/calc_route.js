@@ -13,7 +13,7 @@ router.post("/either", (req, res, next) => {
 
   const result = number1 + number2 - number1 * number2;
 
-  if (result) res.json({ Result: result });
+  if (result) res.json({ result: result });
 });
 
 router.get("/combined", (req, res, next) => {
@@ -22,7 +22,7 @@ router.get("/combined", (req, res, next) => {
 
   const result = number1 * number2;
 
-  if (result) res.json({ Result: result });
+  if (result) res.json({ result: result });
 });
 
 validateNumber = (number) => {
