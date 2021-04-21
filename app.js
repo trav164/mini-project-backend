@@ -1,18 +1,16 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
+// Routes
 const calc = require("./api/calc_route");
 
-app.use(
-  "/calc",
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use("*", cors()); // * includes before other routes
 
+// setup calc route to use bodyParser
+app.use("/calc", bodyParser.urlencoded({ extended: true }));
 app.use("/calc", bodyParser.json());
-
 app.use("/calc", calc);
 
 app.use((req, res, next) => {

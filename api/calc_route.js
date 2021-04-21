@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get("/", (req, res, next) => {
   res.json({
-    message: "Incorrect route, please try...",
+    message: "Incorrect route, please try /calc/either or /calc/combined",
   });
 });
 
