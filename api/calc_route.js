@@ -16,7 +16,7 @@ router.post("/either", (req, res, next) => {
   if (result) res.json({ result: result });
 });
 
-router.get("/combined", (req, res, next) => {
+router.post("/combined", (req, res, next) => {
   const number1 = validateNumber(req.body.number1);
   const number2 = validateNumber(req.body.number2);
 
