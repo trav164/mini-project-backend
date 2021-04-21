@@ -8,7 +8,7 @@ const calc = require("./api/calc_route");
 
 app.use("*", cors()); // * includes before other routes
 
-// setup calc route to use bodyParser
+// setup "calc" route to use bodyParser and point to /api/calc_route
 app.use("/calc", bodyParser.urlencoded({ extended: true }));
 app.use("/calc", bodyParser.json());
 app.use("/calc", calc);

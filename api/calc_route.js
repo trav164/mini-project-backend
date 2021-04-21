@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
+router.post("/", (req, res, next) => {
   res.json({
     message: "Incorrect route, please try /calc/either or /calc/combined",
   });
 });
 
-router.get("/either", (req, res, next) => {
+router.post("/either", (req, res, next) => {
   const number1 = validateNumber(req.body.number1);
   const number2 = validateNumber(req.body.number2);
 
