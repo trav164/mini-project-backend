@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const logger = require("../helpers/logger.js");
+
 router.post("/", (req, res, next) => {
   res.json({
     message: "Incorrect route, please try /calc/either or /calc/combined",
@@ -13,7 +15,10 @@ router.post("/either", (req, res, next) => {
 
   const result = number1 + number2 - number1 * number2;
 
-  if (result) res.json({ result: result });
+  if (result) {
+    res.json({ result: result });
+    logger.logResult(number1, number2, "Either", result);
+  }
 });
 
 router.post("/combined", (req, res, next) => {
@@ -22,7 +27,10 @@ router.post("/combined", (req, res, next) => {
 
   const result = number1 * number2;
 
-  if (result) res.json({ result: result });
+  if (result) {
+    res.json({ result: result });
+    logger.logResult(number1, number2, "Combined", result);
+  }
 });
 
 validateNumber = (number) => {
