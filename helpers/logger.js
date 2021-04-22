@@ -18,7 +18,7 @@ const logResult = (number1, number2, calculation, result) => {
 
   const stringJson = JSON.stringify(data);
 
-  fs.appendFile(filePath, stringJson, function (err) {
+  fs.appendFile(filePath, "\n" + stringJson, function (err) {
     if (err) throw err;
     console.log("saved", stringJson);
   });
