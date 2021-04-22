@@ -15,7 +15,8 @@ router.post("/either", (req, res, next) => {
 
   const result = number1 + number2 - number1 * number2;
 
-  if (result) {
+  // if(result) wouldn't return 0
+  if (result !== null) {
     res.json({ result: result });
     logger.logResult(number1, number2, "Either", result);
   }
@@ -27,7 +28,7 @@ router.post("/combined", (req, res, next) => {
 
   const result = number1 * number2;
 
-  if (result) {
+  if (result !== null) {
     res.json({ result: result });
     logger.logResult(number1, number2, "Combined", result);
   }
@@ -35,7 +36,7 @@ router.post("/combined", (req, res, next) => {
 
 validateNumber = (number) => {
   const x = parseFloat(number);
-  if (x > 0 && x <= 1) {
+  if (x >= 0 && x <= 1) {
     return x;
   }
 };
