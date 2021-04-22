@@ -12,8 +12,8 @@ Runs on port 8080 but can be configured in ('./server.js')
 
 ## Routes
 
-- /calc/combined
-- /calc/either
+- `/calc/combined`
+- `/calc/either`
 
 ### Required Body
 
