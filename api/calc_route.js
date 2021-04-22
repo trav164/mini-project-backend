@@ -32,7 +32,6 @@ router.post("/combined", (req, res, next) => {
   const number2 = validateNumber(req.body.number2);
 
   const result = number1 * number2;
-
   if (!isNaN(result)) {
     res.json({ result: result });
     logger.logResult(number1, number2, "Combined", result);
