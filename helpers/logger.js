@@ -2,7 +2,7 @@ const fs = require("fs");
 const mkdirp = require("mkdirp");
 const path = require("path");
 
-const filePath = path.join(__dirname, "../logs/logs.json");
+const filePath = path.join(__dirname, "../logs/logs.txt");
 
 const logResult = (number1, number2, calculation, result) => {
   checkFileExists();
