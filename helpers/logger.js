@@ -13,7 +13,7 @@ const logResult = (number1, number2, calculation, result) => {
     number2: number2,
     calculation: calculation,
     result: result,
-    date: getDate(),
+    date: getDateIso(),
   };
 
   const stringJson = JSON.stringify(data);
@@ -24,7 +24,7 @@ const logResult = (number1, number2, calculation, result) => {
   });
 };
 
-const getDate = () => {
+const getDateIso = () => {
   return new Date().toISOString();
 };
 
